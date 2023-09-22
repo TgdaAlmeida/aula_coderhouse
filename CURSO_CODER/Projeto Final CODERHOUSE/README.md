@@ -20,7 +20,7 @@
 - [] Python 3.0
 - [] Visual Studio Code
 
-## Bibliotecas utilizadas 📚
+## Bibliotecas utilizadas 📚 
  - [] pandas
  - [] datetime
  - [] plyer

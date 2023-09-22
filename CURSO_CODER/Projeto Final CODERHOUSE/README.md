@@ -6,21 +6,21 @@
 
 ## Índice 📖
 
-* <a href='#ferramentas-utilizadas-🔧'>Ferramentas utilizadas </a>
-* <a href='#bibliotecas-utilizadas-📚'>Importação das biliotecas</a>
-* <a href='#conexão-com-o-banco-de-dados-local-🌐'>Conexão com o banco de dados local</a>
-* <a href='#crianção-de-funções-auxiliares-🪛'>Crianção de funções auxiliares</a>
-* <a href='#preenchimento-das-urls-🖊️'>Preenchimento das URLs</a>
-* <a href='#criação-dos-dataframes-através-de-apis-🧩'>Criação dos DataFrames através de APIs</a>
-* <a href='#tratamento-individual-dos-dataframes-gerados-🩺'>Tratamento individual dos DataFrames gerados</a>
+* <a href='#ferramentas-utilizadas'>Ferramentas utilizadas </a>
+* <a href='#bibliotecas-utilizadas'>Importação das biliotecas</a>
+* <a href='#conexão-com-o-banco-de-dados-local'>Conexão com o banco de dados local</a>
+* <a href='#crianção-de-funções-auxiliares'>Crianção de funções auxiliares</a>
+* <a href='#preenchimento-das-urls'>Preenchimento das URLs</a>
+* <a href='#criação-dos-dataframes-através-de-apis'>Criação dos DataFrames através de APIs</a>
+* <a href='#tratamento-individual-dos-dataframes-gerados'>Tratamento individual dos DataFrames gerados</a>
 * <a href='#salvando-e-enviando-os-dataframes-para-o-banco-de-dados-local'>Salvando e enviando os DataFrames para o banco de dados local</a>
 
-## Ferramentas utilizadas 🔧
+## Ferramentas utilizadas
 
 - [] Python 3.0
 - [] Visual Studio Code
 
-## Bibliotecas utilizadas 📚 
+## Bibliotecas utilizadas 
  - [] pandas
  - [] datetime
  - [] plyer
@@ -29,7 +29,7 @@
  - [] sqlite3
  - [] json
 
-## Conexão com o banco de dados local 🌐
+## Conexão com o banco de dados local
 
 ```python
 conn = sqlite3.connect('coderhouse.db')
@@ -38,7 +38,7 @@ conn = sqlite3.connect('coderhouse.db')
 
 
 
-## Crianção de funções auxiliares 🪛
+## Crianção de funções auxiliares
 ``` python
 def salva_bd(df, nome_tabela):
     conn = sqlite3.connect('coderhouse.db')
@@ -58,7 +58,7 @@ def carrega_bd(nome_tabela):
 
 ```
 
-## Preenchimento das URLs 🖊️
+## Preenchimento das URLs
 
 ```python
 urls = [ 
@@ -68,7 +68,7 @@ urls = [
 ]
 ```
 
-## Criação dos DataFrames através de APIs 🧩
+## Criação dos DataFrames através de APIs
 
 ```python
 def Extraçao():
@@ -96,7 +96,7 @@ def Extraçao():
 ```
 
 
-## Tratamento individual dos DataFrames gerados 🩺
+## Tratamento individual dos DataFrames gerados
  
 <img style="width:500px" src='dataframe.jpg' alt= 'Logo Coder'>
 

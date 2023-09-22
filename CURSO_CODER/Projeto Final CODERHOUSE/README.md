@@ -1,4 +1,6 @@
-# Projeto Final <img style="width:400px" src='logo2.jpeg' alt= 'Logo Coder'>
+ <img style="width:600px" src='logo2.jpeg' alt= 'Logo Coder'>
+
+# Projeto Final 
 
 ## Construção de um pipeline de dados utilizando Python.
 

@@ -6,13 +6,13 @@
 
 ## Índice 📖
 
-* <a href='#ferramentas-utilizadas'>Ferramentas utilizadas </a>
-* <a href='#bibliotecas-utilizadas'>Importação das biliotecas</a>
-* <a href='#conexão-com-o-banco-de-dados-local'>Conexão com o banco de dados local</a>
-* <a href='#crianção-de-funções-auxiliares'>Crianção de funções auxiliares</a>
-* <a href='#preenchimento-das-urls'>Preenchimento das URLs</a>
-* <a href='#criação-dos-dataframes-através-de-apis'>Criação dos DataFrames através de APIs</a>
-* <a href='#tratamento-individual-dos-dataframes-gerados'>Tratamento individual dos DataFrames gerados</a>
+* <a href='#ferramentas-utilizadas-🔧'>Ferramentas utilizadas </a>
+* <a href='#bibliotecas-utilizadas-📚'>Importação das biliotecas</a>
+* <a href='#conexão-com-o-banco-de-dados-local-🌐'>Conexão com o banco de dados local</a>
+* <a href='#crianção-de-funções-auxiliares-🪛'>Crianção de funções auxiliares</a>
+* <a href='#preenchimento-das-urls-🖊️'>Preenchimento das URLs</a>
+* <a href='#criação-dos-dataframes-através-de-apis-🧩'>Criação dos DataFrames através de APIs</a>
+* <a href='#tratamento-individual-dos-dataframes-gerados-🩺'>Tratamento individual dos DataFrames gerados</a>
 
 
 ## Ferramentas utilizadas 🔧

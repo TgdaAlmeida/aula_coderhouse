@@ -17,17 +17,21 @@
 
 ## Ferramentas utilizadas
 
-- [] Python 3.0
-- [] Visual Studio Code
+- Python 3.11.3
+- Visual Studio Code
 
 ## Bibliotecas utilizadas 
- - [] pandas
- - [] datetime
- - [] plyer
- - [] requests
- - [] numpy
- - [] sqlite3
- - [] json
+
+```python
+import pandas as pd
+from datetime import datetime
+from plyer import notification
+import requests
+import numpy as np
+import sqlite3
+import json
+
+``` 
 
 ## Conexão com o banco de dados local
 
@@ -35,8 +39,6 @@
 conn = sqlite3.connect('coderhouse.db')
 
 ```
-
-
 
 ## Crianção de funções auxiliares
 ``` python
@@ -52,9 +54,6 @@ def carrega_bd(nome_tabela):
     df = pd.read_sql_query(query, conn)
     conn.close()
     return df
-
-
-
 
 ```
 
@@ -101,3 +100,9 @@ def Extraçao():
 <img style="width:500px" src='dataframe.jpg' alt= 'Logo Coder'>
 
 ## Salvando e enviando os DataFrames para o banco de dados local 
+
+```
+
+
+
+```

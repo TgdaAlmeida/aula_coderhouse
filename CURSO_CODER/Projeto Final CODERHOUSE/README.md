@@ -99,10 +99,24 @@ def Extraçao():
  
 <img style="width:500px" src='dataframe.jpg' alt= 'Logo Coder'>
 
-## Salvando e enviando os DataFrames para o banco de dados local 
+## Salvando e enviando os DataFrames tratados para o banco de dados local
 
-```
+### Salvamentos e envios realizados através das funções.
 
+```python
+def salva_bd(df, nome_tabela):
+    conn = sqlite3.connect('coderhouse.db')
+    df.to_sql(nome_tabela,conn,if_exists='replace',index = False)
+    conn.close()
+    return None
+
+
+def carrega_bd(nome_tabela):
+    conn = sqlite3.connect('coderhouse.db')
+    query = f"select * from {nome_tabela}"
+    df = pd.read_sql_query(query, conn)
+    conn.close()
+    return df
 
 
 ```

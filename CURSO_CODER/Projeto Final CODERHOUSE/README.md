@@ -10,7 +10,7 @@
 * <a href='#bibliotecas-utilizadas'>Importação das biliotecas</a>
 * <a href='#conexão-com-o-banco-de-dados-local'>Conexão com o banco de dados local</a>
 * <a href='#crianção-de-funções-auxiliares'>Crianção de funções auxiliares</a>
-* <a href='#preenchimento-das-urls'>Preenchimento das URLs</a>
+* <a href='#captação-das-urls'>Captação das URLs</a>
 * <a href='#criação-dos-dataframes-através-de-apis'>Criação dos DataFrames através de APIs</a>
 * <a href='#tratamento-individual-dos-dataframes-gerados'>Tratamento individual dos DataFrames gerados</a>
 * <a href='#salvando-e-enviando-os-dataframes-para-o-banco-de-dados-local'>Salvando e enviando os DataFrames para o banco de dados local</a>
@@ -22,101 +22,40 @@
 
 ## Bibliotecas utilizadas 
 
-```python
-import pandas as pd
-from datetime import datetime
-from plyer import notification
-import requests
-import numpy as np
-import sqlite3
-import json
+pandas: Usado para trabalhar com dados tabulares, como tabelas, tornando a manipulação de dados estruturados mais conveniente.
 
-``` 
+datetime: Utilizado para lidar com datas e horas, importante para registros de data e hora ou cálculos temporais.
+
+notification plyer: Possibilita o envio de notificações para a área de trabalho do usuário.
+
+requests: Habilita a realização de solicitações HTTP a servidores web, permitindo a obtenção de dados de recursos online e a interação com APIs web.
+
+sqlite3: Usado para interagir com bancos de dados SQLite, permitindo o armazenamento e recuperação de dados localmente em aplicativos.
+
+json: Facilita a manipulação de dados no formato JSON, comum em comunicações de API e armazenamento de configurações.
 
 ## Conexão com o banco de dados local
 
-```python
-conn = sqlite3.connect('coderhouse.db')
-
-```
+É aberta uma conexão, através do sqlite3, ao banco de dados local para que os DataFrames resultantes do tratamento pudessem ser armazenados.
 
 ## Crianção de funções auxiliares
-``` python
-def salva_bd(df, nome_tabela):
-    conn = sqlite3.connect('coderhouse.db')
-    df.to_sql(nome_tabela,conn,if_exists='replace',index = False)
-    conn.close()
-    return None
 
-def carrega_bd(nome_tabela):
-    conn = sqlite3.connect('coderhouse.db')
-    query = f"select * from {nome_tabela}"
-    df = pd.read_sql_query(query, conn)
-    conn.close()
-    return df
+Foram criadas funções para automatizar o codigo de forma geral, desde a captação das APIs até o envio dos DataFrames gerados para o banco de dandos.
 
-```
+## Captação das URLs
 
-## Preenchimento das URLs
-
-```python
-urls = [ 
-    'https://brasilapi.com.br/api/banks/v1', #bancos ok
-    'https://brasilapi.com.br/api/cvm/corretoras/v1', #corretoras ok
-    'https://restcountries.com/v3.1/all' #rest countries ok
-]
-```
+Foram coletadas as URLs alvo e armazenadas em uma variável em formato de lista, para que uma das funções conseguisse percorre-la.
 
 ## Criação dos DataFrames através de APIs
 
-```python
-def Extraçao():
-
-    global df_bancos, df_corretoras, df_resties
-
-    for url in urls:
-        request = requests.get(url)
-        response_code = request.status_code
-        if response_code == 200:
-            if url == 'https://brasilapi.com.br/api/banks/v1':
-                df_bancos = pd.DataFrame(request.json())
-                
-            elif url == 'https://brasilapi.com.br/api/cvm/corretoras/v1':
-                df_corretoras = pd.DataFrame(request.json())
-                
-            elif url == 'https://restcountries.com/v3.1/all':
-                df_resties = pd.DataFrame(request.json())
-                
-            else:
-                print('URL fora da base de dados.')
-        else:
-            nivel = 'ATENÇÃO: Erro Grave'
-            Alerta(nivel = nivel, base = 'APIs', etapa = 'Extraçao')
-```
+Após a captação e teste de conexão automatizado das URLs acima, os DataFrames foram sendo gerados, também automaticamente por uma função, para que possa feitos os tratamentos necessários ao longo do código.
 
 
 ## Tratamento individual dos DataFrames gerados
  
-<img style="width:500px" src='dataframe.jpg' alt= 'Logo Coder'>
+OS três DFs gerados foram tratados individualmente, tendo em vista as necessidades e tipo de daos de cada um.
 
 ## Salvando e enviando os DataFrames tratados para o banco de dados local
 
-### Salvamentos e envios realizados através das funções.
+Após o tratamento individual, foi empregada uma função para enviar esse DataFrame para o banco de dados, acompanhada de outras funções que asseguram a confirmação bem-sucedida do armazenamento e exibição de todos os arquivos salvos no banco de dados, apresentados de maneira tabular.
 
-```python
-def salva_bd(df, nome_tabela):
-    conn = sqlite3.connect('coderhouse.db')
-    df.to_sql(nome_tabela,conn,if_exists='replace',index = False)
-    conn.close()
-    return None
-
-
-def carrega_bd(nome_tabela):
-    conn = sqlite3.connect('coderhouse.db')
-    query = f"select * from {nome_tabela}"
-    df = pd.read_sql_query(query, conn)
-    conn.close()
-    return df
-
-
-```

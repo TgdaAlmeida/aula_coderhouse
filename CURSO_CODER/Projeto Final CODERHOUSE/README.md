@@ -3,8 +3,14 @@
 # Projeto Final 
 
 ## Construção de um pipeline de dados utilizando Python.
+## Grupo: 
+Thiago Gomes de Almeida\
+Pedro Alves Junior\
+Regiane Alves
 
 ## Índice 📖
+
+
 
 * <a href='#ferramentas-utilizadas'>Ferramentas utilizadas </a>
 * <a href='#bibliotecas-utilizadas'>Importação das biliotecas</a>
